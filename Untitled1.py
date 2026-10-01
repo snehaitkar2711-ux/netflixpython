@@ -69,7 +69,8 @@ st.markdown(
     <style>
     .stApp {
         background-image:
-            linear-gradient(rgba(8, 8, 11, 0.62), rgba(8, 8, 11, 0.76)),
+            radial-gradient(ellipse at 78% 0%, rgba(229, 9, 20, 0.16), transparent 42%),
+            linear-gradient(rgba(8, 8, 11, 0.72), rgba(8, 8, 11, 0.86)),
             url("data:image/png;base64,__BACKGROUND_IMAGE__");
         background-size: cover;
         background-position: center top;
@@ -77,13 +78,14 @@ st.markdown(
         color: #f5f5f7;
     }
     [data-testid="stSidebar"] {
-        background: #111116;
-        border-right: 1px solid rgba(255, 255, 255, 0.08);
+        background: linear-gradient(180deg, #15151c 0%, #0d0d12 100%);
+        border-right: 1px solid rgba(229, 9, 20, 0.3);
+        box-shadow: 12px 0 36px rgba(0, 0, 0, 0.22);
     }
     .block-container {
         max-width: 1440px;
-        padding-top: 2.2rem;
-        padding-bottom: 3rem;
+        padding-top: 2.4rem;
+        padding-bottom: 3.5rem;
     }
     .brand {
         color: #e50914;
@@ -93,8 +95,19 @@ st.markdown(
         margin-bottom: 1.6rem;
     }
     [data-testid="stSidebar"] img {
-        border-radius: 10px;
+        border: 1px solid rgba(229, 9, 20, 0.25);
+        border-radius: 14px;
         margin: 0 auto 1.2rem;
+        box-shadow: 0 10px 28px rgba(0, 0, 0, 0.28);
+    }
+    [data-testid="stSidebar"] h2,
+    [data-testid="stSidebar"] h3 {
+        color: #ffffff;
+        letter-spacing: -0.02em;
+    }
+    [data-testid="stSidebar"] label {
+        color: #e8e8ed !important;
+        font-weight: 600;
     }
     [data-testid="stSelectbox"] div[data-baseweb="select"] > div,
     [data-testid="stMultiSelect"] div[data-baseweb="select"] > div,
@@ -125,48 +138,99 @@ st.markdown(
         border-color: #b80710;
     }
     .eyebrow {
-        color: #ff7379;
+        display: inline-flex;
+        align-items: center;
+        color: #ffffff;
+        background: linear-gradient(100deg, rgba(229, 9, 20, 0.24), rgba(229, 9, 20, 0.08));
+        border: 1px solid #e50914;
+        border-radius: 999px;
+        padding: 0.45rem 0.9rem;
         font-size: 0.75rem;
         font-weight: 700;
-        letter-spacing: 0.18rem;
+        letter-spacing: 0.14rem;
         text-transform: uppercase;
-        margin-bottom: 0.4rem;
+        margin: 0.4rem 0 0.8rem;
+        box-shadow: 0 0 22px rgba(229, 9, 20, 0.12);
     }
     .hero-title {
         color: #f7f7f8;
         font-size: clamp(2rem, 4vw, 3.2rem);
         font-weight: 800;
-        letter-spacing: -0.06rem;
+        letter-spacing: -0.09rem;
         line-height: 1.1;
-        margin: 0;
+        margin: 0.15rem 0 0;
+        text-shadow: 0 4px 28px rgba(0, 0, 0, 0.4);
     }
     .hero-title span {
         color: #e50914;
+        text-shadow: 0 0 28px rgba(229, 9, 20, 0.25);
     }
     .hero-subtitle {
-        color: #a6a6b0;
+        color: #b8b8c2;
         font-size: 1rem;
-        margin: 0.65rem 0 1.7rem;
+        margin: 0.65rem 0 1.9rem;
     }
     [data-testid="stMetric"] {
-        background: linear-gradient(145deg, #17171e, #121217);
-        border: 1px solid rgba(255, 255, 255, 0.08);
-        border-radius: 14px;
-        padding: 1rem 1.15rem;
+        background: linear-gradient(145deg, rgba(30, 30, 39, 0.96), rgba(15, 15, 21, 0.96));
+        border: 1px solid #e50914;
+        border-radius: 16px;
+        padding: 1rem 1.1rem;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.22), inset 0 1px 0 rgba(255, 255, 255, 0.04);
+        transition: transform 180ms ease, box-shadow 180ms ease;
+    }
+    [data-testid="stMetric"]:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 12px 30px rgba(229, 9, 20, 0.14);
     }
     [data-testid="stMetricLabel"] {
-        color: #a6a6b0;
+        color: #b8b8c2;
+    }
+    [data-testid="stMetricLabel"] p {
+        white-space: normal !important;
+        overflow: visible !important;
+        text-overflow: clip !important;
+        line-height: 1.3;
+        font-size: 0.82rem;
     }
     [data-testid="stMetricValue"] {
         color: #f7f7f8;
     }
+    [data-testid="stMetricValue"] [data-testid="stMarkdownContainer"],
+    [data-testid="stMetricValue"] p {
+        font-size: clamp(1.25rem, 2vw, 1.65rem) !important;
+        line-height: 1.2;
+    }
+    [data-testid="stVerticalBlock"] {
+        border-color: #e50914 !important;
+    }
     [data-testid="stVerticalBlockBorderWrapper"] {
-        background: rgba(20, 20, 27, 0.78);
-        border-color: rgba(255, 255, 255, 0.08);
-        border-radius: 16px;
+        background: linear-gradient(155deg, rgba(27, 27, 36, 0.9), rgba(15, 15, 21, 0.88));
+        border-color: #e50914;
+        border-radius: 18px;
+        box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2);
+        transition: box-shadow 180ms ease, transform 180ms ease;
+    }
+    [data-testid="stVerticalBlockBorderWrapper"]:hover {
+        box-shadow: 0 14px 34px rgba(229, 9, 20, 0.1);
     }
     h2, h3 {
         color: #f7f7f8;
+        letter-spacing: -0.025em;
+    }
+    [data-testid="stCaptionContainer"] {
+        color: #aaaab5;
+    }
+    @media (max-width: 700px) {
+        .block-container {
+            padding: 1.5rem 1rem 2.5rem;
+        }
+        .hero-title {
+            font-size: clamp(2rem, 9vw, 2.7rem);
+        }
+        .eyebrow {
+            font-size: 0.65rem;
+            letter-spacing: 0.09rem;
+        }
     }
     </style>
     """.replace("__BACKGROUND_IMAGE__", background_image),
@@ -229,9 +293,13 @@ filtered = netflix.loc[
     & netflix["Watch_Date"].dt.date.between(start_date, end_date)
 ].copy()
 
-st.markdown('<div class="eyebrow">Streaming data • viewing insights</div>', unsafe_allow_html=True)
+st.image(str(LOGO_PATH), width=120)
 st.markdown(
     '<h1 class="hero-title">Netflix <span>Insights</span></h1>',
+    unsafe_allow_html=True,
+)
+st.markdown(
+    '<div class="eyebrow">Streaming data • viewing insights</div>',
     unsafe_allow_html=True,
 )
 st.markdown(
